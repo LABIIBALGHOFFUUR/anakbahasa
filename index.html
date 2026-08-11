@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ANAK BAHASA — ruang belajar bahasa dan produk e-book karya LABIIB AL GHOFFUUR (ELGHO).">
+  <meta name="theme-color" content="#0b63f6">
+  <title>ANAK BAHASA — LABIIB AL GHOFFUUR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --blue:#0b63f6; --blue2:#19a7ff; --navy:#071a33; --ink:#10243f;
+      --muted:#63738a; --bg:#f6faff; --card:#fff; --line:#dce9f8;
+      --shadow:0 18px 55px rgba(11,55,105,.12); --radius:24px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:blur(16px);border-bottom:1px solid rgba(220,233,248,.7)}
+    .nav-inner{height:74px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-family:"Space Grotesk";font-size:1.25rem;font-weight:700;letter-spacing:.5px}
+    .brand span{color:var(--blue)}
+    .nav-links{display:flex;gap:24px;font-size:.92rem;font-weight:600;color:#4f6178}
+    .nav-links a:hover{color:var(--blue)}
+    .menu{display:none;border:0;background:none;font-size:1.5rem}
+    .hero{padding:145px 0 85px;overflow:hidden;position:relative}
+    .hero:before{content:"";position:absolute;width:480px;height:480px;border-radius:50%;background:rgba(25,167,255,.14);filter:blur(20px);top:-180px;right:-160px}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:55px;align-items:center;position:relative}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:999px;background:#eaf3ff;color:var(--blue);font-size:.82rem;font-weight:700;margin-bottom:18px}
+    h1{font-family:"Space Grotesk";font-size:clamp(2.7rem,6vw,5.2rem);line-height:1.02;letter-spacing:-2.5px;margin-bottom:22px}
+    h1 span{color:var(--blue)}
+    .hero p{font-size:1.08rem;color:var(--muted);max-width:610px}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 19px;border-radius:14px;font-weight:700;transition:.2s;cursor:pointer}
+    .btn-primary{background:var(--blue);color:#fff;box-shadow:0 12px 28px rgba(11,99,246,.25)}
+    .btn-primary:hover{transform:translateY(-2px);background:#0757dc}
+    .btn-ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}
+    .btn-ghost:hover{transform:translateY(-2px);border-color:#b9d2f1}
+    .portrait-wrap{display:flex;justify-content:center;position:relative}
+    .portrait-card{width:min(390px,100%);padding:12px;background:#fff;border:1px solid var(--line);border-radius:32px;box-shadow:var(--shadow);transform:rotate(2deg)}
+    .portrait-card img{width:100%;display:block;border-radius:23px;aspect-ratio:4/5;object-fit:cover;object-position:center 36%}
+    .float-card{position:absolute;bottom:24px;left:0;background:#fff;border:1px solid var(--line);padding:13px 16px;border-radius:17px;box-shadow:var(--shadow);font-size:.84rem;font-weight:700}
+    section{padding:88px 0}
+    .section-head{margin-bottom:34px;max-width:720px}
+    .section-kicker{color:var(--blue);font-weight:800;font-size:.82rem;letter-spacing:1.5px;text-transform:uppercase}
+    h2{font-family:"Space Grotesk";font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin:8px 0 12px}
+    .section-head p{color:var(--muted)}
+    .about{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:stretch}
+    .info-card,.skill-card,.product{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 10px 35px rgba(11,55,105,.06)}
+    .info-card{padding:30px}
+    .info-list{display:grid;gap:16px;margin-top:20px}
+    .info-row{display:flex;gap:13px;align-items:flex-start}
+    .icon{width:40px;height:40px;display:grid;place-items:center;border-radius:12px;background:#eaf3ff;flex:0 0 auto}
+    .info-row strong{display:block}
+    .info-row span{color:var(--muted);font-size:.93rem}
+    .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .skill-card{padding:21px;display:flex;align-items:center;gap:12px;transition:.2s}
+    .skill-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+    .skill-flag{font-size:1.6rem}
+    .skill-card strong{display:block}
+    .skill-card span{font-size:.82rem;color:var(--muted)}
+    .shop{background:linear-gradient(180deg,#f6faff,#edf6ff)}
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .product{padding:22px;display:flex;flex-direction:column;min-height:235px}
+    .product-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+    .tag{background:#eaf3ff;color:var(--blue);padding:6px 9px;border-radius:999px;font-size:.72rem;font-weight:800}
+    .product h3{font-size:1.05rem;line-height:1.35;margin:18px 0 8px}
+    .price{font-size:1.35rem;font-weight:800;color:var(--blue);margin-bottom:15px}
+    .product p{color:var(--muted);font-size:.84rem;flex:1}
+    .product .btn{width:100%;margin-top:17px}
+    .shop-note{margin-top:20px;text-align:center;color:var(--muted);font-size:.9rem}
+    .contact{background:var(--navy);color:#fff}
+    .contact .section-head p{color:#a9b9cc}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .contact-card{padding:26px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);border-radius:20px}
+    .contact-card small{color:#9fb0c5;display:block;margin-bottom:5px}
+    .contact-card a{font-weight:700;word-break:break-word}
+    .contact-card a:hover{color:#66b8ff}
+    footer{background:#041326;color:#8fa3ba;padding:25px 0;font-size:.86rem}
+    footer .footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    .socials{display:flex;gap:14px}
+    .socials a:hover{color:#fff}
+    .reveal{opacity:0;transform:translateY(18px);transition:.7s ease}
+    .reveal.show{opacity:1;transform:none}
+    @media(max-width:850px){
+      .nav-links{display:none}.menu{display:block}
+      .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+      .hero{padding-top:120px}.portrait-wrap{order:-1}.portrait-card{width:min(330px,85%)}
+      .products{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:560px){
+      .nav-inner{height:65px}.nav-links.open{display:flex;position:absolute;top:65px;left:0;right:0;padding:18px 4%;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;gap:14px}
+      .hero{padding:105px 0 60px} section{padding:65px 0}
+      .skills,.products{grid-template-columns:1fr}
+      h1{letter-spacing:-1.5px}
+      .float-card{left:4px;bottom:10px}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#home">ANAK <span>BAHASA</span></a>
+      <button class="menu" aria-label="Buka menu">☰</button>
+      <div class="nav-links">
+        <a href="#home">Home</a><a href="#tentang">Tentang</a><a href="#keahlian">Keahlian</a><a href="#ebook">E-book</a><a href="#kontak">Kontak</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">🌍 Belajar Bahasa • Berkembang • Berani Berbicara</div>
+          <h1>Selamat datang di <span>ANAK BAHASA</span>.</h1>
+          <p>Tempat untuk belajar, mengenal, dan mengembangkan kemampuan bahasa bersama <strong>LABIIB AL GHOFFUUR (ELGHO)</strong>.</p>
+          <div class="buttons">
+            <a class="btn btn-primary" href="#ebook">📚 Lihat E-book</a>
+            <a class="btn btn-ghost" href="https://wa.me/628979517541?text=Halo%20Labiib%2C%20saya%20ingin%20bertanya%20tentang%20e-book%20ANAK%20BAHASA." target="_blank" rel="noopener">💬 Hubungi Saya</a>
+          </div>
+        </div>
+        <div class="portrait-wrap reveal">
+          <div class="portrait-card"><img src="assets/profile.jpg" alt="LABIIB AL GHOFFUUR"></div>
+          <div class="float-card">🎤 Public Speaking & Language</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="tentang">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-kicker">Tentang Saya</div>
+          <h2>Kenalan dengan ELGHO</h2>
+          <p>Saya percaya belajar bahasa bukan hanya tentang menghafal kata, tetapi juga tentang berani menggunakannya dalam kehidupan nyata.</p>
+        </div>
+        <div class="about-grid">
+          <div class="info-card reveal">
+            <h3>LABIIB AL GHOFFUUR</h3>
+            <p style="color:var(--muted);margin-top:7px">Panggilan: <strong>ELGHO</strong></p>
+            <div class="info-list">
+              <div class="info-row"><div class="icon">📍</div><div><strong>Asal</strong><span>Indramayu, Indonesia</span></div></div>
+              <div class="info-row"><div class="icon">🎂</div><div><strong>Usia</strong><span>19 tahun</span></div></div>
+              <div class="info-row"><div class="icon">🌐</div><div><strong>Fokus</strong><span>Bahasa, komunikasi & pengembangan diri</span></div></div>
+            </div>
+          </div>
+          <div id="keahlian">
+            <div class="skills">
+              <div class="skill-card reveal"><div class="skill-flag">🇷🇺</div><div><strong>Bahasa Rusia</strong><span>Russian Language</span></div></div>
+              <div class="skill-card reveal"><div class="skill-flag">🇬🇧</div><div><strong>Bahasa Inggris</strong><span>English Language</span></div></div>
+              <div class="skill-card reveal"><div class="skill-flag">🇹🇷</div><div><strong>Bahasa Turki</strong><span>Turkish Language</span></div></div>
+              <div class="skill-card reveal"><div class="skill-flag">🇪🇸</div><div><strong>Bahasa Spanyol</strong><span>Spanish Language</span></div></div>
+              <div class="skill-card reveal" style="grid-column:1/-1"><div class="skill-flag">🎤</div><div><strong>Public Speaking</strong><span>Berbicara di depan kamera & orang lain</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shop" id="ebook">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-kicker">Koleksi E-book</div>
+          <h2>Belajar bahasa tanpa ribet.</h2>
+          <p>Beberapa e-book yang tersedia di toko ANAK BAHASA. Tombol pembelian mengarah ke halaman toko.</p>
+        </div>
+        <div class="products">
+          <article class="product reveal"><div class="product-top"><span class="tag">ENGLISH</span><span>📘</span></div><h3>Trik Jitu Cepat Bisa Speaking English</h3><div class="price">Rp8.000</div><p>Panduan ringkas untuk membantu kamu lebih percaya diri saat speaking.</p><a class="btn btn-primary" href="https://lynk.id/thetaskmaster" target="_blank" rel="noopener">Beli E-book</a></article>
+          <article class="product reveal"><div class="product-top"><span class="tag">KOREA</span><span>🇰🇷</span></div><h3>Bahasa Korea Tanpa Ribet — Edisi ke-2</h3><div class="price">Rp15.000</div><p>Materi belajar bahasa Korea yang dibuat lebih praktis untuk dipelajari.</p><a class="btn btn-primary" href="https://lynk.id/thetaskmaster" target="_blank" rel="noopener">Beli E-book</a></article>
+          <article class="product reveal"><div class="product-top"><span class="tag">MANDARIN</span><span>🇨🇳</span></div><h3>E-book Dijamin Jago HSK 1 Mandarin</h3><div class="price">Rp15.000</div><p>Materi dasar untuk mulai mengenal kosakata dan pola bahasa Mandarin.</p><a class="btn btn-primary" href="https://lynk.id/thetaskmaster" target="_blank" rel="noopener">Beli E-book</a></article>
+          <article class="product reveal"><div class="product-top"><span class="tag">JEPANG</span><span>🇯🇵</span></div><h3>Japanese JLPT N4 — Ringkasan Minna no Nihongo</h3><div class="price">Rp15.000</div><p>Ringkasan materi untuk membantu proses belajar bahasa Jepang tingkat N4.</p><a class="btn btn-primary" href="https://lynk.id/thetaskmaster" target="_blank" rel="noopener">Beli E-book</a></article>
+          <article class="product reveal"><div class="product-top"><span class="tag">RUSIA</span><span>🇷🇺</span></div><h3>Promo 5 Buku Bahasa Rusia Sekaligus</h3><div class="price">Rp149.000</div><p>Paket belajar bahasa Rusia yang berisi lima buku sekaligus.</p><a class="btn btn-primary" href="https://lynk.id/thetaskmaster" target="_blank" rel="noopener">Beli E-book</a></article>
+          <article class="product reveal"><div class="product-top"><span class="tag">JEPANG</span><span>🇯🇵</span></div><h3>E-book Mini Bunpou Jepang N5</h3><div class="price">Rp20.999</div><p>Panduan tata bahasa dasar Jepang untuk pemula dalam format PDF.</p><a class="btn btn-primary" href="https://lynk.id/thetaskmaster" target="_blank" rel="noopener">Beli E-book</a></article>
+          <article class="product reveal"><div class="product-top"><span class="tag">JEPANG</span><span>🇯🇵</span></div><h3>E-book Bunpou Bahasa Jepang N4</h3><div class="price">Rp18.999</div><p>Ringkasan pola kalimat dan latihan soal untuk belajar N4.</p><a class="btn btn-primary" href="https://lynk.id/thetaskmaster" target="_blank" rel="noopener">Beli E-book</a></article>
+          <article class="product reveal"><div class="product-top"><span class="tag">ENGLISH</span><span>🇬🇧</span></div><h3>English Vocabularies and Grammar</h3><div class="price">Rp20.999</div><p>Panduan kosakata dan tata bahasa dasar untuk pemula.</p><a class="btn btn-primary" href="https://lynk.id/thetaskmaster" target="_blank" rel="noopener">Beli E-book</a></article>
+          <article class="product reveal"><div class="product-top"><span class="tag">JEPANG</span><span>🇯🇵</span></div><h3>E-book N5 Tanpa Ribet</h3><div class="price">Rp20.000</div><p>Panduan ringkas bahasa Jepang JLPT N5 untuk pemula.</p><a class="btn btn-primary" href="https://lynk.id/thetaskmaster" target="_blank" rel="noopener">Beli E-book</a></article>
+        </div>
+        <p class="shop-note">Harga dan koleksi di atas mengikuti daftar yang tampil pada toko Lynk saat website dibuat.</p>
+      </div>
+    </section>
+
+    <section class="contact" id="kontak">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-kicker">Kontak</div>
+          <h2>Yuk, ngobrol tentang bahasa.</h2>
+          <p>Untuk pembelian e-book, pertanyaan, kolaborasi, atau informasi lainnya, silakan hubungi saya.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card reveal"><small>WhatsApp</small><a href="https://wa.me/628979517541" target="_blank" rel="noopener">08979517541</a></div>
+          <div class="contact-card reveal"><small>Email</small><a href="mailto:alghoffuurlabiib@gmail.com">alghoffuurlabiib@gmail.com</a></div>
+          <div class="contact-card reveal"><small>Toko E-book</small><a href="https://lynk.id/thetaskmaster" target="_blank" rel="noopener">lynk.id/thetaskmaster</a></div>
+          <div class="contact-card reveal"><small>Instagram</small><a href="https://instagram.com/xiaobi_03" target="_blank" rel="noopener">@xiaobi_03</a></div>
+          <div class="contact-card reveal"><small>TikTok</small><a href="https://tiktok.com/@xiao_bi_" target="_blank" rel="noopener">@xiao_bi_</a></div>
+          <div class="contact-card reveal"><small>YouTube</small><a href="https://youtube.com/@SOBATLABIIB" target="_blank" rel="noopener">SOBAT LABIIB</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> ANAK BAHASA • LABIIB AL GHOFFUUR</div>
+      <div class="socials"><a href="#home">Back to top ↑</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const menu = document.querySelector(".menu");
+    const links = document.querySelector(".nav-links");
+    menu.addEventListener("click", () => links.classList.toggle("open"));
+    links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => links.classList.remove("open")));
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add("show"); });
+    }, {threshold:.12});
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
